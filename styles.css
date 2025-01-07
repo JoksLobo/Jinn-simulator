@@ -131,3 +131,61 @@ input{
 .occult-name{
     display: none;
 }
+
+.card{
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+
+    
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility:hidden;
+}
+
+.front {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    
+    img{
+        max-width: 100%;
+    }
+}
+
+.back {
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+
+    p{ padding: 8px;}
+}
+
+.divCard{ display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: center;
+
+gap: 24px;}

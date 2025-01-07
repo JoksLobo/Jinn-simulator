@@ -6,25 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
     const button = document.getElementById('get-name');
     const resultado = document.getElementById('show-name');
 
-    button.addEventListener('click', function() {
-        const valor = input.value.trim(); // Remove espaços em branco antes e depois do valor
-    
-        if (valor === "") {
-            // Exibe mensagem de erro se o campo estiver vazio
-            resultado.textContent = "Por favor, preencha o campo de nome.";
-            resultado.style.color = "red";
-        } else {
-            clickSound.play();
-            
-            resultado.textContent = `${valor}`;
-            resultado.style.color = "black"; // Reseta a cor do texto para o valor normal
-    
-            const url = `gotYourName.html?name=${encodeURIComponent(valor)}`;
-            setTimeout(function() {
-                window.location.href = url;
-            }, 1500);
-        }
-    });
     
 
     backgroundMusic.play().catch(error => {
@@ -44,5 +25,26 @@ document.addEventListener('DOMContentLoaded', function(){
                 }, 1200); // Ajuste o delay conforme necessário (em milissegundos)
             }
         });
+    });
+
+    
+    button.addEventListener('click', function() {
+        const valor = input.value.trim(); // Remove espaços em branco antes e depois do valor
+    
+        if (valor === "") {
+            // Exibe mensagem de erro se o campo estiver vazio
+            resultado.textContent = "Por favor, preencha o campo de nome.";
+            resultado.style.color = "red";
+        } else {
+            clickSound.play();
+            
+            resultado.textContent = `${valor}`;
+            resultado.style.color = "black"; // Reseta a cor do texto para o valor normal
+    
+            const url = `gotYourName.html?name=${encodeURIComponent(valor)}`;
+            setTimeout(function() {
+                window.location.href = url;
+            }, 1500);
+        }
     });
 });
