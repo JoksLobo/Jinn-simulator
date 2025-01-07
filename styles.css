@@ -1,0 +1,133 @@
+*{
+
+    box-sizing: border-box;
+    color: white;
+    font-family: "Amarante", serif;
+        font-weight: 400;
+        font-style: normal;
+        
+}
+
+button {
+    width: 360px;
+    background-color: gray;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+body, html{
+    background-color: black;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container{
+    border:10px groove white;
+    text-align: center;
+    font-size: 24px;
+    padding: 100px;
+}
+
+span{
+    
+    cursor: pointer;
+    
+}
+
+@keyframes pulsate {
+    0% {
+        border-color: red;
+    }
+    50% {
+        border-color: white;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+.highlighted-border {
+    border: 5px groove red;
+    animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        color: red;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: red;
+    }
+}
+
+.pulsate-text {
+    animation: pulsate 2s infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 10s forwards;
+}
+
+.delay-1 {
+    animation-delay: 5s;
+}
+
+.delay-2 {
+    animation-delay: 10s;
+}
+
+.delay-3 {
+    animation-delay: 15s;
+}
+
+.delay-4 {
+    animation-delay: 18s;
+}
+
+.delay-5 {
+    animation-delay: 22s;
+}
+
+.campo-nome{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+label{
+    margin-bottom: 8px;
+}
+
+input{
+    border-radius: 10px;
+    height: 50px;
+    width: 400px;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+}
+
+.occult-name{
+    display: none;
+}
