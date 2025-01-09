@@ -5,11 +5,24 @@ document.addEventListener('DOMContentLoaded', function(){
     const input = document.getElementById('name');
     const button = document.getElementById('get-name');
     const resultado = document.getElementById('show-name');
-
+    const hoverElements = document.querySelectorAll('.hover-element');
+    const audio = new Audio('flipcard-91468.mp3');
+    const soundElements = document.querySelectorAll('.sound-element');
     
-
     backgroundMusic.play().catch(error => {
         console.error('a reprodução automatica foi impedida', error);
+    });
+    
+    soundElements.forEach(element => {
+        element.addEventListener('click', function() {
+            clickSound.play();
+        })
+    })
+
+    hoverElements.forEach(element => {
+    element.addEventListener('mouseover', function() {
+    audio.play();
+    });
     });
 
     spans.forEach(span => {
@@ -30,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     button.addEventListener('click', function() {
         const valor = input.value.trim(); // Remove espaços em branco antes e depois do valor
-    
+        
         if (valor === "") {
             // Exibe mensagem de erro se o campo estiver vazio
             resultado.textContent = "Por favor, preencha o campo de nome.";
@@ -40,11 +53,13 @@ document.addEventListener('DOMContentLoaded', function(){
             
             resultado.textContent = `${valor}`;
             resultado.style.color = "black"; // Reseta a cor do texto para o valor normal
-    
+            
             const url = `gotYourName.html?name=${encodeURIComponent(valor)}`;
             setTimeout(function() {
                 window.location.href = url;
             }, 1500);
         }
     });
+
 });
+

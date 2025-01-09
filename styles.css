@@ -34,7 +34,7 @@ body, html{
     border:10px groove white;
     text-align: center;
     font-size: 24px;
-    padding: 100px;
+    padding: 50px;
 }
 
 span{
@@ -137,7 +137,7 @@ input{
     height: 300px;
     perspective: 1000px;
 
-    
+    cursor: pointer;
 }
 
 .inner {
